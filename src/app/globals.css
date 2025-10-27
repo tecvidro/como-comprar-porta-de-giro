@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* biome-ignore lint/nursery/noUnknownAtRule: used for theming */
+@theme inline{
+  --color-gray-100: #eaeaea;
+  --color-gray-200: #a5a5a5;
+  --color-gray-300: #2c2c2c;
+  --color-light-blue: #269dc9;
+  --color-green: #00c968;
+  --color-blue: #004282;
+  --color-red: #c92626;
+  --color-dark-blue: #13273e;
+  --color-orange: #e35210;
+  --color-orange-light: #F5F1EB;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--color-orange-light);
+  color: var(--color-dark-blue);
+  font-family: var(--font-montserrat), Helvetica, sans-serif;
+}
