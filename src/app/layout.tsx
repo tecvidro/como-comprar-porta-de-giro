@@ -42,7 +42,7 @@ export default function RootLayout({
             <section className="order-2 md:order-1">
               <Menu pageTitle={content.panelTitle} models={content.models} />
             </section>
-            <section className="order-1 md:order-2 text-center bg-white rounded-lg border-dashed border-orange border p-4">
+            <section className="order-1 md:order-2 ">
               {children}
             </section>
           </main>

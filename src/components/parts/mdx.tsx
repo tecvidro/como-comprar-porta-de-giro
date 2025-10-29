@@ -1,36 +1,18 @@
-/* eslint-disable no-new-func */
-// import React, { HTMLAttributes } from "react";
-import * as runtime from "react/jsx-runtime";
+import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 
-import Image from "next/image";
-
-const useMDXComponent = (code: string) => {
-  const fn = new Function(code);
-  return fn({ ...runtime }).default;
-};
-
-// type ComponentsProps = HTMLAttributes<HTMLElement>;
+import { Kit } from "./kit";
 
 const components = {
-
+  Kit
 };
 
-interface MdxProps {
-  code: string;
-  components?: Record<string, React.ComponentType>;
-}
-
-export function MDXContent({ code, components }: MdxProps) {
-  const Component = useMDXComponent(code);
-  return <Component components={{ Image, ...components }} />;
-}
-
-export function Mdx({ code }: MdxProps) {
-  const Component = useMDXComponent(code);
-
+export function Mdx(props: MDXRemoteProps) {
   return (
-    <div>
-      <Component components={components} />
+    <div className="flex flex-col gap-3 p-4 items-center w-full">
+      <MDXRemote
+        {...props}
+        components={{ ...components, ...(props.components || {}) }}
+      />
     </div>
   );
 }

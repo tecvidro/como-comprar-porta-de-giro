@@ -3,6 +3,9 @@ import { PageHeader } from "@/src/components/parts/pageHeader";
 import { getAllProducts, getProductBySlug } from "@/src/lib/api"
 import { notFound } from "next/navigation";
 import { Mdx } from "@/src/components/parts/mdx";
+import { Kit } from "@/src/components/parts/kit";
+
+
 
 type Params = {
   params: Promise<{
@@ -46,11 +49,10 @@ export default async function Page(props: Params) {
   }
 
   return (
-    <div>
+    <div className="h-full flex flex-col justify-between text-center bg-white rounded-lg border-dashed border-orange border p-4">
       <PageHeader title={page.title} subTitle={page.subtitle} />
-      <div>
-        <Mdx code={page.content} />
-      </div>
+      <Kit title="Kit Standard: Perfis + acessórios" />
+      <Mdx source={page.content} />
     </div>
   )
 }
