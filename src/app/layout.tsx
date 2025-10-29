@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 const content = {
   panelTitle: "Clique na imagem para selecionar o modelo",
   models: [
-    { name: "Kit standard: perfis + acessórios", link: '/kit-standard', imageUrl: '', id: 1 },
-    { name: "Vidro com travessa", link: '/vidro-com-travessa', imageUrl: '', id: 2 },
-    { name: "Vidro com lambril", link: '/vidro-com-lambril', imageUrl: '', id: 3 },
-    { name: "Lambril", link: '/lambril', imageUrl: '', id: 4 },
-    { name: "Vidro com veneziana", link: '/vidro-com-veneziana', imageUrl: '', id: 5 },
-    { name: "Veneziana", link: '/veneziana', imageUrl: '', id: 6 },
+    { name: "Kit standard: perfis + acessórios", link: '/kit-standard', imageUrl: 'images/standard.png', id: 1 },
+    { name: "Vidro com travessa", link: '/vidro-com-travessa', imageUrl: 'images/vidro-com-travessa.png', id: 2 },
+    { name: "Vidro com lambril", link: '/vidro-com-lambril', imageUrl: 'images/vidro-com-lambril.png', id: 3 },
+    { name: "Lambril", link: '/lambril', imageUrl: 'images/lambril.png', id: 4 },
+    { name: "Vidro com veneziana", link: '/vidro-com-veneziana', imageUrl: 'images/vidro-com-veneziana.png', id: 5 },
+    { name: "Veneziana", link: '/veneziana', imageUrl: 'images/veneziana.png', id: 6 },
   ]
 }
 
@@ -37,14 +37,16 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${montserrat.variable} antialiased`}>
         <Header title="Como comprar a Porta de Giro Montare" />
-        <main className="grid md:grid-cols-2 p-4">
-          <section className="order-2 md:order-1">
-            <Menu pageTitle={content.panelTitle} models={content.models} />
-          </section>
-          <section className="order-1 md:order-2 text-center bg-white rounded-lg border-dashed border-orange border p-4">
-            {children}
-          </section>
-        </main>
+        <div className="flex flex-col items-center">
+          <main className="w-full max-w-480 grid md:grid-cols-[minmax(auto,33rem)_minmax(32rem,1fr)] p-4">
+            <section className="order-2 md:order-1">
+              <Menu pageTitle={content.panelTitle} models={content.models} />
+            </section>
+            <section className="order-1 md:order-2 text-center bg-white rounded-lg border-dashed border-orange border p-4">
+              {children}
+            </section>
+          </main>
+        </div>
       </body>
     </html>
   );

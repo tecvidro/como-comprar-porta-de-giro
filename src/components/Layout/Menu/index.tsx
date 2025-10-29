@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Card } from "../../ui/Card";
 
 type Model = {
   name: string;
@@ -14,13 +14,11 @@ type MenuProps = {
 
 export function Menu({ pageTitle, models }: MenuProps) {
   return (
-    <nav className="p-4 flex flex-col">
+    <nav className="pt-4 px-4 flex flex-col gap-4 @container">
       <h2 className="text-orange font-bold">{pageTitle}</h2>
-      <div>
+      <div className="grid @2xs:grid-cols-2 @md:grid-cols-3 gap-2">
         {!!models && models.map((item) => (
-          <div key={item.id}>
-            <Link href={item.link}>{item.name}</Link>
-          </div>
+          <Card key={item.id} title={item.name} link={item.link} imageUrl={item.imageUrl} />
         ))}
       </div>
     </nav>

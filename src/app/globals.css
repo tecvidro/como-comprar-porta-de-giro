@@ -7,6 +7,7 @@
 
 /* biome-ignore lint/nursery/noUnknownAtRule: used for theming */
 @theme inline{
+  --breakpoint-md:55rem;
   --color-gray-100: #eaeaea;
   --color-gray-200: #a5a5a5;
   --color-gray-300: #2c2c2c;
