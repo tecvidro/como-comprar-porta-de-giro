@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "../components/Layout/Header";
 import { Menu } from "../components/Layout/Menu";
+import { getAllProducts } from "../lib/api";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -16,23 +17,14 @@ export const metadata: Metadata = {
 };
 
 
-const content = {
-  panelTitle: "Clique na imagem para selecionar o modelo",
-  models: [
-    { name: "Kit standard: perfis + acessórios", link: '/kit-standard', imageUrl: 'images/standard.png', id: 1 },
-    { name: "Vidro com travessa", link: '/vidro-com-travessa', imageUrl: 'images/vidro-com-travessa.png', id: 2 },
-    { name: "Vidro com lambril", link: '/vidro-com-lambril', imageUrl: 'images/vidro-com-lambril.png', id: 3 },
-    { name: "Lambril", link: '/lambril', imageUrl: 'images/lambril.png', id: 4 },
-    { name: "Vidro com veneziana", link: '/vidro-com-veneziana', imageUrl: 'images/vidro-com-veneziana.png', id: 5 },
-    { name: "Veneziana", link: '/veneziana', imageUrl: 'images/veneziana.png', id: 6 },
-  ]
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const allProducts = getAllProducts()
+
   return (
     <html lang="pt-BR">
       <body className={`${montserrat.variable} antialiased`}>
@@ -40,7 +32,7 @@ export default function RootLayout({
         <div className="flex flex-col items-center">
           <main className="w-full max-w-480 grid md:grid-cols-[minmax(auto,33rem)_minmax(32rem,1fr)] p-4">
             <section className="order-2 md:order-1">
-              <Menu pageTitle={content.panelTitle} models={content.models} />
+              <Menu pageTitle="Clique na imagem para selecionar o modelo" models={allProducts} />
             </section>
             <section className="order-1 md:order-2 ">
               {children}
