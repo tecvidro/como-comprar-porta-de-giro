@@ -32,7 +32,7 @@ export function Card({ title, link, imageUrl }: CardProps) {
   return (
     <Link href={link} className={cardVariants({ state })} aria-disabled={isCurrent}>
       <img src={imageUrl} width={155} height={275} alt="title" />
-      <div className="flex justify-center text-center font-bold">
+      <div className="flex justify-center text-center text-sm font-bold">
         {title}
       </div>
     </Link>
