@@ -5,8 +5,6 @@ import { notFound } from "next/navigation";
 import { Mdx } from "@/src/components/parts/mdx";
 import { Kit } from "@/src/components/parts/kit";
 
-
-
 type Params = {
   params: Promise<{
     slug: string;
@@ -51,7 +49,7 @@ export default async function Page(props: Params) {
   return (
     <div className="h-full flex flex-col justify-between text-center bg-white rounded-lg border-dashed border-orange border p-4">
       <PageHeader title={page.title} subTitle={page.subtitle} />
-      <Kit title="Kit Standard: Perfis + acessórios" />
+      <Kit title="Kit Standard: Perfis + acessórios" images={page.images} />
       <Mdx source={page.content} />
     </div>
   )
