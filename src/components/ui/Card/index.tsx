@@ -30,11 +30,11 @@ export function Card({ title, link, imageUrl }: CardProps) {
   const state = isCurrent ? "selected" : "default"
 
   return (
-    <Link href={link} className={cardVariants({ state })} aria-disabled={isCurrent}>
+    <a href={link} className={cardVariants({ state })} aria-disabled={isCurrent}>
       <img src={imageUrl} width={155} height={275} alt="title" />
       <div className="flex justify-center text-center text-sm font-bold">
         {title}
       </div>
-    </Link>
+    </a>
   )
 }

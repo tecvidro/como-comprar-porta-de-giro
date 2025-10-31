@@ -4,6 +4,8 @@ import { getAllProducts, getProductBySlug } from "@/src/lib/api"
 import { notFound } from "next/navigation";
 import { Mdx } from "@/src/components/parts/mdx";
 import { Kit } from "@/src/components/parts/kit";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 type Params = {
   params: Promise<{
@@ -47,10 +49,15 @@ export default async function Page(props: Params) {
   }
 
   return (
-    <div className="h-full flex flex-col justify-between text-center bg-white rounded-lg border-dashed border-orange border p-4">
-      <PageHeader title={page.title} subTitle={page.subtitle} />
-      <Kit title="Kit Standard: Perfis + acessórios" images={page.images} />
-      <Mdx source={page.content} />
+    <div className="flex flex-col gap-4 h-full">
+      <div className="block">
+        <a className="flex gap-2 bg-orange w-fit pl-1 pr-4 py-2 items-center text-white text-sm rounded md:hidden hover:bg-blue-400 active:bg-dark-blue transition" href={"/"}><ArrowLeft size={18} className="text-inherit" />Voltar</a>
+      </div>
+      <div className="h-full flex flex-col gap-4 justify-between text-center bg-white rounded-lg border-dashed border-orange border p-4">
+        <PageHeader title={page.title} subTitle={page.subtitle} />
+        <Kit title="Kit Standard: Perfis + acessórios" images={page.images} />
+        <Mdx source={page.content} />
+      </div>
     </div>
   )
 }

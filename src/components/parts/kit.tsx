@@ -19,7 +19,9 @@ export function Kit({ title, images }: KitProps) {
         {!!images && images.map((image) => (
           <div key={image.alt} className="flex flex-col lg:flex-row items-center justify-around w-full">
             <Signal type={image.signal} />
-            <img src={image.src} alt={image.alt} className="w-full" />
+            <div className="w-full h-full flex items-center justify-center">
+              <img src={image.src} alt={image.alt} width={image.width} height={image.height} />
+            </div>
           </div>
         ))}
       </div>
@@ -29,7 +31,7 @@ export function Kit({ title, images }: KitProps) {
 
 function Signal({ type = 'plus' }: { type?: 'equal' | 'plus' }) {
   return (
-    <div className="bg-gray-100">
+    <div>
       {type == 'plus' && <Plus />}
       {type == 'equal' && <Equal />}
     </div>
