@@ -1,6 +1,5 @@
 'use client'
 import { cva } from "class-variance-authority"
-import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 type CardProps = {
@@ -13,7 +12,7 @@ const cardVariants = cva(["flex", "flex-col", "justify-between", "items-center",
   {
     variants: {
       state: {
-        default: ["bg-white", "border-dark-blue", "hover:bg-orange", "hover:text-white",],
+        default: ["bg-white", "border-dark-blue", "hover:bg-orange", "hover:text-white", "active:scale-95"],
         selected: ["bg-dark-blue", "text-white", "border-orange", "pointer-events-none"]
       }
     },

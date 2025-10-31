@@ -1,6 +1,6 @@
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 
-import { Kit } from "./kit";
+import { Kit } from "./Kit";
 
 const components = {
   Kit

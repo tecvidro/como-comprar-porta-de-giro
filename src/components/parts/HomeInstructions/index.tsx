@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowLeft } from "lucide-react"
-import { Heading } from "../ui/Heading"
+import { Heading } from "../../ui/Heading"
 
 type HomeInstructionsProps = {
   title: string

@@ -1,4 +1,4 @@
-import { Heading } from "../ui/Heading"
+import { Heading } from "@/src/components/ui/Heading"
 
 type PageHeaderProps = {
   title: string
