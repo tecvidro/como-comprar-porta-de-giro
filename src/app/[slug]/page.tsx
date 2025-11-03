@@ -6,6 +6,7 @@ import { Mdx } from "@/src/components/parts/mdx";
 import { Kit } from "@/src/components/parts/Kit";
 import { ArrowLeft } from "lucide-react";
 import { BocContainer } from "@/src/components/parts/BoxContainer";
+import Link from "next/link";
 
 type Params = {
   params: Promise<{
@@ -51,7 +52,7 @@ export default async function Page(props: Params) {
   return (
     <div className="flex flex-col gap-4 h-full">
       <div className="block">
-        <a className="flex gap-2 bg-orange w-fit pl-1 pr-4 py-2 items-center text-white text-sm rounded md:hidden hover:bg-blue-400 active:bg-dark-blue transition" href={"/"}><ArrowLeft size={18} className="text-inherit" />Voltar</a>
+        <Link className="flex gap-2 bg-orange w-fit pl-1 pr-4 py-2 items-center text-white text-sm rounded md:hidden hover:bg-blue-400 active:bg-dark-blue transition" href={"/"}><ArrowLeft size={18} className="text-inherit" />Voltar</Link>
       </div>
       <BocContainer>
         <PageHeader title={page.title} subTitle={page.subtitle} />

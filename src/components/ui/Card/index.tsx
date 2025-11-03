@@ -1,5 +1,6 @@
 'use client'
 import { cva } from "class-variance-authority"
+import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 type CardProps = {
@@ -29,11 +30,11 @@ export function Card({ title, link, imageUrl }: CardProps) {
   const state = isCurrent ? "selected" : "default"
 
   return (
-    <a href={link} className={cardVariants({ state })} aria-disabled={isCurrent}>
+    <Link href={link} className={cardVariants({ state })} aria-disabled={isCurrent} scroll={false}>
       <img src={imageUrl} width={155} height={275} alt="title" />
       <div className="flex justify-center text-center text-sm font-bold">
         {title}
       </div>
-    </a>
+    </Link>
   )
 }

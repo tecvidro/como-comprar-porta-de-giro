@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "../components/Layout/Header";
 import { Menu } from "../components/Layout/Menu";
 import { getAllProducts } from "../lib/api";
+import ScrollToTop from "../components/parts/ScrollTop";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -35,7 +36,9 @@ export default function RootLayout({
               <Menu pageTitle="Clique na imagem para selecionar o modelo" models={allProducts} />
             </section>
             <section className="order-1 md:order-2 ">
-              {children}
+              <ScrollToTop>
+                {children}
+              </ScrollToTop>
             </section>
           </main>
         </div>
