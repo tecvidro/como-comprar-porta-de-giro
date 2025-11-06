@@ -10,7 +10,7 @@ const animationVariants = {
   start: { opacity: 0, x: 100 },
   end: { opacity: 1, x: 0 }
 }
-export function BocContainer({ children, ...props }: BocContainerProps) {
+export function BoxContainer({ children, ...props }: BocContainerProps) {
   return (
     <motion.div
       className="h-full flex flex-col gap-4 justify-between text-center bg-white rounded-lg border-dashed border-orange border p-4"
